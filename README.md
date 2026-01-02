@@ -47,7 +47,7 @@ Follow these steps to run the current Proof of Concept locally.
 ### 1. Install Dependencies
 Download the necessary libraries to run the LLM interface.
 
-```bash
+bash
 npm install
 
 ### 2. Configure Credentials
@@ -63,5 +63,4 @@ Add your key: GEMINI_API_KEY=your_key_here
 Start the local development server.
 
 Bash
-
 npm run dev
