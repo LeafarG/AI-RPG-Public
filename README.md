@@ -1,66 +1,99 @@
-# ⚔️ AI RPG Adventure: Proof of Concept
-**Current Status:** Prototype / Alpha
+⚔️ AI RPG Adventure: The Next Evolution of TTRPGs
 
-This repository contains the Proof of Concept (PoC) for an infinite, text-based Role-Playing Game engine. Currently powered by Google's Gemini API, this prototype demonstrates the core capability of a Large Language Model acting as a dynamic Game Master—generating descriptions, processing player intent, and managing basic narrative flow.
+Current Status: Prototype / Alpha
 
-View the active prototype in AI Studio: [https://ai.studio/apps/drive/1UMc0eAEHrxtC_wKCNbMpqjZmk6xShvRL](https://ai.studio/apps/drive/1UMc0eAEHrxtC_wKCNbMpqjZmk6xShvRL)
-Or in vercel: https://dagger-heart-gav2du468-leafargs-projects.vercel.app/
-## 🚀 Current Features
+This repository outlines the architecture and vision for AI RPG Adventure, a revolutionary engine designed to solve the critical failures of current AI roleplaying games. Unlike existing platforms that function as glorified text predictors, this engine integrates a strict Rules Adjudication Layer with the narrative power of Large Language Models (LLMs), creating the first true AI Game Master.
 
-This prototype implements a fully functional "Micro-Agent" architecture to handle complex RPG decision-making without breaking immersion.
+View the active prototype in AI Studio: https://ai.studio/apps/drive/1UMc0eAEHrxtC_wKCNbMpqjZmk6xShvRL
 
-### 🧠 AI Game Master Core
-The system utilizes a multi-step cognitive process to run the game:
-* **Adjudicator Agent:** Acts as the "Rules Lawyer," analyzing player intent against the Daggerheart ruleset to determine mechanical outcomes (e.g., "Roll Agility difficulty 12").
-* **Narrator Agent:** Transforms dry mechanical results into evocative storytelling, describing the consequences of success or failure.
-* **Bookkeeper Agent:** Manages state in the background, updating enemy HP, player stress, and inventory without manual input.
+🔒 Proprietary Notice
 
-### 📜 Character Management
-* **Interactive Builder:** A 5-step wizard to create heroes, guiding players through Class, Ancestry, and Gear selection.
-* **Automated Stats:** Automatically calculates derived statistics like Evasion and Damage Thresholds based on equipment and features.
-* **Domain Cards:** Digital tracking of abilities and spells, including resource costs (Hope) and exhaustion states.
+The source code is not provided in this repository because I intend to commercialize this project. My vision is that I have seen a unique opportunity to revolutionize the TTRPG experience through advanced AI integration, and I am currently developing the full commercial version.
 
-### ⚔️ Tactical Combat System
-* **Damage Resolver Modal:** Implements the specific Daggerheart damage rules, comparing incoming hits against Minor/Major/Severe thresholds and allowing players to spend Armor slots to mitigate harm.
-* **Combat Dashboard:** A dedicated side panel for desktop users that tracks enemy status, manages the GM's Fear pool, and provides one-click attack rolls.
-* **Duality Dice Roller:** A custom 3D-simulated dice roller that handles the "Hope vs. Fear" mechanic, automatically detecting critical successes and narrative complications.
+💥 The Problem: Why Current AI RPGs Fail
 
-### 💾 Persistence & Memory
-* **Chapter Archival:** The AI automatically summarizes gameplay sessions into "Diary Entries," compressing long chat logs into narrative chapters to maintain context over long adventures.
-* **Local State:** Full persistence of character data, chat history, and campaign progress via local storage.
+The market is saturated with "AI Games" like AI Dungeon, NovelAI, and Character.ai, but they all suffer from the same fundamental flaws when trying to run a real Tabletop RPG:
 
-## 🔮 The Vision: Main Version Roadmap
-While this PoC demonstrates the narrative capabilities of Gemini, the upcoming Main Version is being architected to solve the "memory" and "consistency" problems inherent in LLM games.
+Hallucination & Rule Breaking: Ask ChatGPT to run a game, and it will eventually let you jump to the moon or cast a spell you don't have. It prioritizes "Yes, and..." over game balance.
 
-The full release will integrate advanced data structures to power true Emergent Gameplay:
+The "Goldfish Memory" Effect: Current LLMs lose track of inventory, health, and narrative threads after a few dozen turns.
 
-* **🕸️ Knowledge Graphs:** Moving beyond simple text history, the game state will be stored in a structured graph database (e.g., Neo4j). This maps relationships between every NPC, faction, location, and item.
-* **🧠 Graph Recall (RAG):** The AI will utilize Retrieval-Augmented Generation against the knowledge graph. This ensures the GM perfectly recalls a shopkeeper you met 500 turns ago or a promise you made to a rival faction.
-* **🦋 Emergent Gameplay:** World events will not be scripted. Using the graph, actions will ripple through the world organically—killing a merchant might cause an economic crisis in a neighboring town, detected and narrated by the AI.
-* **Persistent World State:** A living, breathing database that evolves even when the player isn't looking.
+Lack of Tactical Depth: There is no real game. There is no visual feedback for combat, no dice physics, and no resource management. It's just collaborative writing, not gaming.
 
-## 🛡️ Run the Prototype
-Follow these steps to run the current Proof of Concept locally.
+🏆 Our Solution: The Competitive Advantage
 
-**Prerequisites:** Node.js
+We are not building a chatbot. We are building a Game Engine with a Soul.
 
-### 1. Install Dependencies
-Download the necessary libraries to run the LLM interface.
+1. The Micro-Agent Architecture (The "Brain")
 
-bash
-npm install
+Instead of relying on a single, confused prompt, our engine utilizes a sophisticated multi-agent system that separates duties, ensuring zero hallucination on mechanics:
 
-### 2. Configure Credentials
-You need a Gemini API Key to power the Game Master.
+The Adjudicator: A ruthless, logic-based agent that reads the Daggerheart rulebook. It validates every player action against their character sheet. If you try to fly without wings, it rejects the action before the story is even generated.
 
-Create a file named .env.local.
+The Narrator: Frees the LLM to focus purely on evocative descriptions, knowing the math has already been checked.
 
-Add your key: GEMINI_API_KEY=your_key_here
+The Bookkeeper: Silently manages the database state—HP, Gold, Stress, and Fear tokens—ensuring the world remains consistent 100% of the time.
 
-(Get your key here: Google AI Studio)
+2. True TTRPG Fidelity (The "System")
 
-### 3. Launch the Adventure
-Start the local development server.
+We don't just "pretend" to roll dice. We implement the full Daggerheart system mechanics:
 
-Bash
-npm run dev
+Duality Dice Physics: A visual 3D dice roller that calculates Hope vs. Fear, triggering narrative consequences (Soft Moves vs. Hard Moves) exactly as the game designers intended.
+
+Complex Damage Thresholds: Unlike simple HP bars, our engine handles Minor, Major, and Severe damage thresholds, armor slot usage, and stress mechanics automatically.
+
+State-Aware Combat: A visual combat dashboard tracks initiative, enemy difficulty, and action economy. You don't type "I attack"; you click your Longsword, and the AI calculates the outcome based on your stats.
+
+3. Visual & Interactive Hybrid (The "Experience")
+
+We bridge the gap between video games and TTRPGs.
+
+Dynamic UI: Inventory, Character Sheets, and Domain Cards are not text—they are interactive React components.
+
+Visual Feedback: When you take damage, the screen reacts. When you spend Hope, the tokens deplete.
+
+Tactical Depth: Manage your Domain Cards, exhaust abilities, and make strategic choices that matter.
+
+🚀 Current Features
+
+🧠 AI Game Master Core
+
+Adjudicator Agent: Determines mechanical outcomes (e.g., "Roll Agility difficulty 12").
+
+Narrator Agent: Transforms mechanical results into evocative storytelling.
+
+Bookkeeper Agent: Manages state (Enemy HP, Player Stress, Inventory) in the background.
+
+📜 Character Management
+
+Interactive Builder: A 5-step wizard to create heroes (Class, Ancestry, Gear).
+
+Automated Stats: auto-calculates Evasion and Damage Thresholds based on equipment.
+
+Domain Cards: Digital tracking of abilities, spells, and exhaustion states.
+
+⚔️ Tactical Combat System
+
+Damage Resolver Modal: Implements specific Daggerheart damage rules (Minor/Major/Severe thresholds).
+
+Combat Dashboard: Tracks enemy status, GM Fear pool, and one-click attacks.
+
+Duality Dice Roller: Simulates "Hope vs. Fear" mechanics with critical success detection.
+
+💾 Persistence & Memory
+
+Chapter Archival: Summarizes gameplay into "Diary Entries" to maintain long-term context.
+
+Local State: Full persistence of character data and campaign progress via local storage.
+
+🔮 The Vision: Main Version Roadmap
+
+The PoC is just the beginning. The commercial release will introduce Emergent Gameplay powered by Graph RAG.
+
+🕸️ Knowledge Graphs: The game state will move from text to a Neo4j graph database, mapping every relationship between NPCs, factions, and items.
+
+🧠 Graph Recall (RAG): The GM will perfectly recall a shopkeeper you met 500 turns ago or a promise made to a rival faction.
+
+🦋 Emergent World: Killing a merchant will causally ripple through the graph, creating an economic crisis in a neighboring town that the AI detects and narrates.
+
+Persistent Living World: A database that evolves even when the player isn't looking.
